@@ -56,8 +56,7 @@ fedora:
   artifacts:
     when: 'always'
     paths:
-      - '$BUILD_DIR/meson-logs/meson-log.txt'
-      - '$BUILD_DIR/meson-logs/testlog.txt'
+      - '$BUILD_DIR/meson-logs'
     expire_in: 2 days
 
 ubuntu:
@@ -76,8 +75,7 @@ ubuntu:
   artifacts:
     when: 'always'
     paths:
-      - '$BUILD_DIR/meson-logs/meson-log.txt'
-      - '$BUILD_DIR/meson-logs/testlog.txt'
+      - '$BUILD_DIR/meson-logs'
     expire_in: 2 days
 
 flatpak:
