@@ -5,7 +5,7 @@
  */
 
 // GLib's character-based substring function.
-[CCode (cname = "g_utf8_substring")]
+[CCode (cheader_filename = "glib.h", cname = "g_utf8_substring")]
 extern string glib_substring(string str, long start_pos, long end_pos);
 
 namespace Geary.String {
