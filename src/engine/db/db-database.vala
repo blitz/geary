@@ -230,7 +230,7 @@ public class Geary.Db.Database : Context {
             sqlite_flags |= Sqlite.OPEN_CREATE;
 
         if (this.file == null) {
-            sqlite_flags |= SQLITE_OPEN_URI;
+            sqlite_flags |= Sqlite.OPEN_URI;
         }
 
         DatabaseConnection cx = new DatabaseConnection(

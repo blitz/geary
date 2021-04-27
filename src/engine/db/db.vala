@@ -22,9 +22,6 @@
  * [[http://code.google.com/p/sqlheavy/|SQLHeavy]].
  */
 
-// Work around missing const in sqlite3.vapi. See Bug 795627.
-extern const int SQLITE_OPEN_URI;
-
 [CCode (cheader_filename = "sqlite3.h")]
 extern int sqlite3_enable_shared_cache(int enabled);
 
