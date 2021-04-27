@@ -5,8 +5,6 @@
  * (version 2.1 or later).  See the COPYING file in this distribution.
  */
 
-[CCode (cname = "g_utf8_collate_key")]
-extern string utf8_collate_key(string data, ssize_t len);
 extern int sqlite3_register_fts5_tokeniser(Sqlite.Database db);
 extern int sqlite3_register_fts5_matches(Sqlite.Database db);
 extern int sqlite3_register_legacy_tokenizer(Sqlite.Database db);
@@ -58,11 +56,11 @@ private class Geary.ImapDB.Database : Geary.Db.VersionedDatabase {
         // Don't need to normalise, collate_key() will do it for us
         string? a_str = null;
         if (a_bytes != null) {
-            a_str = utf8_collate_key((string) a_bytes, a_len);
+            a_str = ((string) a_bytes).collate_key (a_len);
         }
         string? b_str = null;
         if (b_bytes != null) {
-            b_str = utf8_collate_key((string) b_bytes, b_len);
+            b_str = ((string) b_bytes).collate_key (b_len);
         }
         return GLib.strcmp(a_str, b_str);
     }
